@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS fred.series (
+    _ts timestamptz NOT NULL,
+    release_id INT NOT NULL,
+    id VARCHAR(255) NOT NULL,
+    realtime_start DATE NOT NULL,
+    realtime_end DATE NOT NULL,
+    title VARCHAR(500) NOT NULL,
+    observation_start DATE NOT NULL,
+    observation_end DATE NOT NULL,
+    frequency VARCHAR(50) NOT NULL,
+    frequency_short VARCHAR(255) NOT NULL,
+    units VARCHAR(255) NOT NULL,
+    units_short VARCHAR(255) NOT NULL,
+    seasonal_adjustment VARCHAR(255) NOT NULL,
+    seasonal_adjustment_short VARCHAR(10) NOT NULL,
+    last_updated timestamptz NOT NULL,
+    popularity INT NOT NULL,
+    group_popularity INT NOT NULL,
+    notes TEXT,
+    PRIMARY KEY (release_id, id, realtime_end)
+);
